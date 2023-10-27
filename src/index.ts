@@ -40,7 +40,7 @@ export function parseBranchName(ref?: string, baseRef?: string): string {
   }
   // should look like [heads, my-branch-name] or [pulls, my-pull] or [tags, v0.0.0]
   const sanitizedRef = ref.replace("refs/", "");
-  const refType = sanitizedRef.slice(0, sanitizedRef.indexOf("/"));
+  var refType = "heads";
   //const refSourceName = sanitizedRef.slice(sanitizedRef.indexOf("/") + 1);
   const refSourceName =  getInput("branchname")  ;
 
