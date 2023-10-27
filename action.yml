@@ -5,6 +5,9 @@ branding:
 description: |
   An easy way to set envronment variables based on the building branch. Check out the full README for instructions.
 inputs:
+  branchname:
+    description: 'The name of the current branch'
+    required: true
   bevOverwrite:
     description: 'Overwrite other, already-set environment variables with the same name'
     default: true

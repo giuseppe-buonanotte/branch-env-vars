@@ -10,6 +10,7 @@ const protectedEnvVars = [
   "INPUT_BEVOVERWRITE",
   "INPUT_BEVACTIONONNOREF",
   "INPUT_BEVSETEMPTYVARS",
+  "INPUT_BRANCHNAME"
 ];
 
 let canOverwrite;
@@ -40,7 +41,8 @@ export function parseBranchName(ref?: string, baseRef?: string): string {
   // should look like [heads, my-branch-name] or [pulls, my-pull] or [tags, v0.0.0]
   const sanitizedRef = ref.replace("refs/", "");
   const refType = sanitizedRef.slice(0, sanitizedRef.indexOf("/"));
-  const refSourceName = sanitizedRef.slice(sanitizedRef.indexOf("/") + 1);
+  //const refSourceName = sanitizedRef.slice(sanitizedRef.indexOf("/") + 1);
+  const refSourceName =  getInput("branchname")  ;
 
   /* workflow yaml with:
   TEST_ENV_VAR: |
